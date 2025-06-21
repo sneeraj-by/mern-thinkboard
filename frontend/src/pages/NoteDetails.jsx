@@ -1,7 +1,8 @@
-import { ArrowLeftIcon, LoaderIcon, Trash2Icon } from "lucide-react";
+import { ArrowLeftIcon, Trash2Icon } from "lucide-react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate, useParams } from "react-router";
+import Loader from "../components/Loader";
 import apiClient from "../lib/axios";
 
 const NoteDetails = () => {
@@ -59,12 +60,7 @@ const NoteDetails = () => {
     }
   };
 
-  if (loading)
-    return (
-      <div className="min-h-screen bg-base-100 flex items-center justify-center">
-        <LoaderIcon className="animate-spin size-10" />
-      </div>
-    );
+  if (loading) return <Loader />;
 
   return (
     <div className="min-h-screen bg-base-100">
