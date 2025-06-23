@@ -60,7 +60,7 @@ const NoteDetails = () => {
     }
   };
 
-  if (loading) return <Loader />;
+  if (loading) return <Loader customClass="min-h-screen bg-base-100" />;
 
   return (
     <div className="min-h-screen bg-base-100">
